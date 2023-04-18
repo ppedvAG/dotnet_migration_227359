@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PdfiumViewer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,11 @@ namespace HalloWinForms
             InitializeComponent();
 
             label1.Text = Assembly.GetEntryAssembly()?.GetCustomAttribute<TargetFrameworkAttribute>()?.FrameworkName;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            pdfViewer1.Document = PdfDocument.Load("TEST PDF.pdf");
         }
     }
 }
