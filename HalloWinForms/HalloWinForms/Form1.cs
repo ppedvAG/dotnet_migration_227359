@@ -24,6 +24,8 @@ namespace HalloWinForms
 
         private void button1_Click(object sender, EventArgs e)
         {
+            pdfViewer1.Document?.Dispose();
+
             pdfViewer1.Document = PdfDocument.Load("TEST PDF.pdf");
         }
     }
