@@ -1,0 +1,1 @@
+﻿dotnet publish HalloWinForms.csproj --configuration Release --framework net7.0-windows --output publish --self-contained True --runtime win-x86 --verbosity Normal /property:PublishSingleFile=True /property:IncludeNativeLibrariesForSelfExtract=True
