@@ -38,7 +38,7 @@ namespace HalloDb
                 dataGridView1.DataSource = employees;
 
 
-            }//con.Dispose(); ->    //con.Close();
+            } //con.Dispose(); --> con.Close();
             catch (Exception ex)
             {
                 MessageBox.Show($"Ein Fehler ist aufgetreten:\n {ex.Message}");
