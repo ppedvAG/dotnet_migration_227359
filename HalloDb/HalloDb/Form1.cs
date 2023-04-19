@@ -52,10 +52,8 @@ namespace HalloDb
                 con.Open();
 
                 using var cmd = new SqlCommand("SELECT COUNT(*) FROM Employees", con);
-                object resultAsObject = cmd.ExecuteScalar();
-                int resultAlsIntCasting = (int)resultAsObject; //casting = doof
 
-                if (resultAsObject is int resultAsInt) //pattern matching = fein
+                if (cmd.ExecuteScalar() is int resultAsInt) 
                 {
                     MessageBox.Show($"{resultAsInt:000} Employees in DB");
                 }
