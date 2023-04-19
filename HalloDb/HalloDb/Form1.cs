@@ -9,11 +9,10 @@ namespace HalloDb
             InitializeComponent();
         }
 
+        string conString = "Server=(localdb)\\mssqllocaldb;Database=Northwnd;Trusted_Connection=true;TrustServerCertificate=true;";
+
         private void button1_Click(object sender, EventArgs e)
         {
-            string conString = "Server=.;Database=Northwind;Trusted_Connection=true;";
-            conString = "Server=(localdb)\\mssqllocaldb;Database=Northwnd;Trusted_Connection=true;TrustServerCertificate=true;";
-
             try
             {
                 using var con = new SqlConnection(conString);
@@ -43,7 +42,29 @@ namespace HalloDb
             {
                 MessageBox.Show($"Ein Fehler ist aufgetreten:\n {ex.Message}");
             }
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using var con = new SqlConnection(conString);
+                con.Open();
+
+                using var cmd = new SqlCommand("SELECT COUNT(*) FROM Employees", con);
+                object resultAsObject = cmd.ExecuteScalar();
+                int resultAlsIntCasting = (int)resultAsObject; //casting = doof
+
+                if (resultAsObject is int resultAsInt) //pattern matching = fein
+                {
+                    MessageBox.Show($"{resultAsInt:000} Employees in DB");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ein Fehler ist aufgetreten:\n {ex.Message}");
+            }
         }
     }
 }

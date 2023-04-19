@@ -31,6 +31,7 @@
             flowLayoutPanel1 = new FlowLayoutPanel();
             button1 = new Button();
             dataGridView1 = new DataGridView();
+            button2 = new Button();
             flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -41,6 +42,7 @@
             flowLayoutPanel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             flowLayoutPanel1.BackColor = Color.PeachPuff;
             flowLayoutPanel1.Controls.Add(button1);
+            flowLayoutPanel1.Controls.Add(button2);
             flowLayoutPanel1.Dock = DockStyle.Top;
             flowLayoutPanel1.Location = new Point(0, 0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -70,6 +72,18 @@
             dataGridView1.Size = new Size(800, 402);
             dataGridView1.TabIndex = 1;
             // 
+            // button2
+            // 
+            button2.AutoSize = true;
+            button2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            button2.Location = new Point(139, 3);
+            button2.Name = "button2";
+            button2.Size = new Size(211, 42);
+            button2.TabIndex = 1;
+            button2.Text = "Count Employees";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
@@ -91,5 +105,6 @@
         private FlowLayoutPanel flowLayoutPanel1;
         private Button button1;
         private DataGridView dataGridView1;
+        private Button button2;
     }
 }
